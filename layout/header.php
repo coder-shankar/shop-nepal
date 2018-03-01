@@ -10,7 +10,7 @@ $_SESSION['member_id']=$_COOKIE['member_id'];
 
 ?>
 
-
+ 
 
 
 <?php 
@@ -297,7 +297,7 @@ if ((isset($_COOKIE['user']) && isset($_COOKIE['password'])&&isset($_COOKIE['mem
       <!--end of modal-header-->
 
       <div class="modal-body">
-        <form class="form-horizontal" onsubmit=" return registrationSubmit()" method="post" action="registration.php">
+        <form class="form-horizontal" onsubmit=" return registrationSubmit()" method="post" action="http://localhost/shopnepal/registration.php">
 
           <p>* field are required</p>
 
@@ -436,17 +436,17 @@ if ((isset($_COOKIE['user']) && isset($_COOKIE['password'])&&isset($_COOKIE['mem
  <span style="color: darkgreen;">       All your information will kept private and will not distributed        </span>
         
 
-        </form>
-        <!--end of form-->
+      
 
       </div>
       <!--end of modal-body-->
 
       <div class="modal-footer">
         <button type="submit" name="register" class="btn btn-primary">Register</button>
+  </form>
+        <!--end of form-->        
 
       </div> <!-- end of modal-footer -->
-
     </div>
     <!--end of modal-content-->
 

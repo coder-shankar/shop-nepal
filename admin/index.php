@@ -263,6 +263,7 @@ $result=$product->fetchProduct();
 		<td> <?php echo $products['product_title']?></td>
 		<td> <?php echo $products['product_price']?></td>
 
+
 		<td>
 			 <?php echo $products['last_modified']?>
 		</td>

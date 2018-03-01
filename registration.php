@@ -8,11 +8,12 @@ if(isset($_POST['register'])) {
 
 
 //create connection 
-$conn=new mysqli("localhost","root","","shopnepal");
+$conn=new mysqli("localhost","root","","shopnepaldb");
 //if connection error occured
 if($conn->connect_error){
   die ("connection failed").$conn->connect-error;
 }
+
 
 
 
@@ -30,9 +31,17 @@ $password=md5($passwords);
 
 
 
+
+
+
 //sql query to insert the data into database
-$sql ="INSERT INTO `member` (`name`, `email`
-, `phone`, `address`, `gender`, `dob`, `credit`, `password`, `memberid`) VALUES ('$name', '$email', '$phone', '$address', '$gender', '$dob', '$credit', '$password', NULL);";
+$sql ="INSERT INTO `member` (`member_id`, `name`, `email`, `phone`, `address`, `gender`, `dob`, `credit`, `password`, `cart_cart_id`) VALUES (NULL,'$name', '$email', '$phone', '$address', '$gender', '$dob', '$credit', '$password','1');";
+
+
+
+
+// INSERT INTO `member` (`member_id`, `name`, `email`, `phone`, `address`, `gender`, `dob`, `credit`, `password`, `cart_cart_id`) VALUES (NULL, 'shankar', 'shankarghimire8766@gmail.com', '9843783799', 'lalitpur ', 'male', '05/2/1997', '444444444443333333333', 'root', '1');
+
 
 //checking whether the query is sucessful or not
 
@@ -40,7 +49,7 @@ if ($conn->query($sql) === TRUE) {
 
     echo "New records created successfully";
     echo '<script type="text/javascript"> alert(" your registation complete")</script>';
-   // header('Location:index.php');
+   header('Location:http://localhost/shopnepal/index.php');
     exit;
 } else {
 
@@ -64,8 +73,7 @@ $conn->close();
 	</head> 
 	<body>
 		
-		<h2>data added sucessfully</h2>
-
+		
 		<div class="data">
 
 	<?php		
