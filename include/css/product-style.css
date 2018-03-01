@@ -1,0 +1,128 @@
+/*---------------------
+ecommerce project
+shop nepal.com
+author shankar ghimire
+-----------------------*/
+
+/*
+--------------------
+Layout
+--------------------*/
+
+#signModal .row{
+	margin-top: 20px;
+
+}
+
+#topNavigationBar{
+	background: #050E6F;
+	font-size: 16px;
+	border-radius: 10px;
+	
+}
+footer {
+	background: #333;
+	color: #eee;
+	font-size: 11px;
+	padding: 20px;
+}
+
+
+#submitButton{
+	margin:20px 20px 0px 0px;
+}
+#topNavigationBar a{
+	color: white;
+}
+#serviceDrpdown ul {
+	background: #000;
+}
+#sidebar li{
+	list-style: none;
+	color: white;
+	
+}
+#about h2{
+color: white;
+}
+#sidebar{
+	margin-right: 10px;
+	padding-right: 20px;
+	border-radius: 5px;
+	border: 1px solid red;
+}
+#google-map{
+	
+}
+#about{
+	background: #63CD0E;
+	text-align: justify;
+	border: 1px solid blue;
+	border-radius: 10px;
+	opacity: 1;
+}
+#footer{
+	background: #AF9A9A;
+	color: white;
+	text-align: center;
+}
+
+#laptopFeatures{
+	text-align: center;
+}
+#laptopFeatures img{
+	margin-top: 20px;
+}
+#moblieFeature{
+	text-align: center;
+}
+#moblieFeatures img{
+	margin-top: 20px;
+}
+
+#searchInput{
+	width: 400px;
+}
+
+
+#slide1{
+	background: url(../../images/slide1.jpg) top center no-repeat;
+}
+#slide2{
+	background: url(../../images/slide2.jpg) top center no-repeat;
+	
+}
+/*
+--------------------
+Gloabal Style
+--------------------*/
+
+
+
+/*
+---------------
+carousel
+----------------*/
+
+#myCarousel{
+	margin-top: 70px;
+	border-radius: 10px;
+	overflow: hidden;
+	
+}
+.carousel-caption h4{
+	font-size: 32px;
+	
+}
+.carousel-caption p{
+	font-size: 24px;
+}
+
+
+
+/*
+--------------
+media query
+--------------*/
+
+

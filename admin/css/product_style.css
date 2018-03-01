@@ -1,0 +1,17 @@
+body{
+
+}
+
+.container{
+	padding:10px;
+	border:1px soid green;
+}
+
+.product_type{
+	border-top: 5px solid green;
+	border-bottom: 5px solid green;
+	margin: 5px;
+	padding: 10px;
+
+
+}

@@ -1,0 +1,159 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+body{
+
+background: linear-gradient(to bottom, #4e1a56 0%,#54058c 100%);
+
+background-attachment: fixed;
+
+
+}
+
+
+
+
+
+
+h1{
+	
+	background: url(../../images/logo.png) center top no-repeat;
+	text-indent: -9999px;
+	
+
+}
+
+
+.container{
+	margin: 0 auto;
+	max-width: 1024px;
+	width: 80%;
+
+}
+
+
+nav {
+	background: linear-gradient(to right, #042860 0%, #0ad2ff 50% ,#042860 100%);
+
+}
+nav .container{
+	display: flex;
+	justify-content: center;
+
+}
+
+nav ul{
+	list-style-type: none;
+
+}
+
+.container ul li{
+	display: inline-block;
+	padding: 0 15px;
+}
+
+.container ul li a{
+	padding: 15px;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 17px;
+	color: black;
+	font-weight: 600;
+}
+
+.active ,.container ul li a:hover {
+	background-color: green;
+	color: white;
+	border-radius: 5px;
+}
+
+
+
+
+.row{
+	
+	display: flex;
+	width: 100%;
+	
+	
+	
+}
+
+.col{
+	width: 50%;
+	
+
+}
+
+.collapse{
+	display: none;
+}
+
+.line{
+	width: 30px;
+	height: 5px;
+	background-color: black;
+	margin: 3px;
+}
+
+.form-element{
+	padding:15px;
+	overflow: hidden;
+}
+
+.form-element label{
+	color: yellow;
+	font-weight: 600px;
+	overflow: hidden;
+	padding: 5px;
+}
+
+.form-element input{
+	padding: 5px;
+	border: 1px solid white;
+	border-radius: 10px;
+	font-size: 15px;
+	background:linear-gradient( to right ,#325b01,#50c471,#325b01);
+	color: white;
+	font-weight: 600px;
+	width: 400px;
+	
+}
+
+.form-element input[type=submit]{
+
+border-radius: 5px;
+background: green;
+color: white;
+padding: 10px;
+font-size: 20px;
+}
+
+
+.submit{
+	text-align: center;
+}
+
+
+
+
+
+.button{
+	padding: 15px;
+	background: red;
+	color: green;
+	border-radius: 5px;
+
+}
+table{
+	color: white;
+}
+
+.img{
+	border-radius: 5px;
+}

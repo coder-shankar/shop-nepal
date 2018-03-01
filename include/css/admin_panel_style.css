@@ -1,0 +1,65 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #0E0E2B;
+	color: white;
+}
+
+.navbar-responsive-collapse ul li{
+	margin-left: 100px;
+
+
+}
+nav{
+	border:1px solid blue;
+	border-radius: 20px;
+}
+
+#main {
+	margin-top: 60px;
+	
+}
+
+#accountDropdown ul li{
+	margin: 2px;
+
+
+}
+h3{
+	color: white;
+	border:2px dotted green;
+
+}
+
+#main .row{
+	margin-top: 20px;
+}
+
+#adminpanel_navbar{
+
+	padding-top: 5px;
+}
+
+
+.navbar-inverse {
+    
+    border-radius: 10px;
+    color: white;
+}
+
+.form-control{
+	color: green;
+}
+#btnsection{
+	border:1px solid green;
+}
+
+#sidebarnav{
+	margin-top: 90px;
+}
+ul{
+	list-style-type: none;
+}
+ul li{
+	margin-top: 5px;
+}

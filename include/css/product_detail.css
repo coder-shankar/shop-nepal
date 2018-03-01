@@ -1,0 +1,14 @@
+.sell{
+	border:1px solid green;
+	padding: 10px;
+
+}
+.btn{
+	display: inline-block;
+	padding: 50px,3px;
+}
+body{
+	background-color: wheat;
+}
+
+

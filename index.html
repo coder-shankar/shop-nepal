@@ -1,0 +1,607 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<!--website description tilte -->
+<title>Shop Nepal</title>
+
+<!--external css-->
+<link rel="stylesheet" href="include/css/style.css">
+  
+<!--bootstrap css-->
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="include/css/font-awesome.css">
+
+
+<!-- Include Modernizr in the head, before any other Javascript -->
+<script src="include/js/modernizr-2.6.2.min.js"></script>
+<!--custome js-->
+<script src="include/js/script.js" type="text/javascript"></script>
+   
+
+</head>
+<body>
+
+
+
+
+
+
+
+<!--top navigation bar-->
+<div class="navbar navbar-fixed-top"  id="topNavigationBar"  >
+
+  <div class="container">
+
+    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+    <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+    <a href="#" class="navbar-brand"><img src="images/logo.jpg" class="img-rounded"></a>
+    <div class="nav-collapse collapse navbar-responsive-collapse" >
+      <ul class="nav navbar-nav">
+        <li class="active"> <a href="/">Home</a> </li>
+        <li class="dropdown" id="serviceDrpdown"> 
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <strong class="caret"></strong> </a>
+          <ul class="dropdown-menu">
+            <li> <a href="#">Home Services</a> </li>
+            <li class="divider"> </li>
+            <li class="dropdown-header"> Payment </li>
+            <li> <a href="#">Cash on delivery</a> </li>
+            <li> <a href="#">Online</a> </li>
+          </ul>
+          <!--end of menu item-->
+        </li>
+      </ul>
+      <!--end of navbar-nav-->
+
+      <form class="navbar-form pull-left">
+        <input type="text" class="form-control" placeholder="Search products ..." id="searchInput" onkeyup="search()">
+        <button class="btn-btn-default" type="submit"><i class="fa fa-search"></i></button>
+      </form>
+      <!--end of nav form-->
+
+      <ul class="nav navbar-nav pull-right">
+        <li> <a href="#">Cart&nbsp; <i class="fa fa-shopping-cart"></i></a> </li>
+        
+
+        <li class="dropdown" >
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <i class="fa fa-cog"></i></a>
+
+          <ul class="dropdown-menu" style="background: #000;">
+           <li> <a href="#signModal" data-toggle="modal"> Sign in &nbsp;<i class="fa fa-user-circle"></i> </a> </li>
+            <li><a href="#">SignUp</a></li>
+            <li class="divider"></li>
+            <li><a href="#registationModal" data-toggle="modal">Registration</a></li>
+            <li><a href="#">Help</a></li>
+            
+          </ul>
+          
+        </li>
+
+
+
+      </ul>
+    </div>
+    <!--end of navbar collapse-->
+
+  </div>
+  <!--end of container-->
+</div>
+<!--end of navbar-->
+
+
+
+<!--sign in modal-->
+<div class="modal fade" id="signModal">
+  <div class="modal-dialog modal-dialog-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal"> &times; </button>
+        <h3>Sign In</h3>
+      </div>
+      <!--end of modal-header-->
+
+      <div class="modal-body">
+        <form id="signModalForm">
+
+
+        <div class="row">
+          
+
+<div class="col-8">
+ 
+  <div class="input-group">
+ <span>Username</span>
+              <span class="input-group-addon">
+ <i class="fa fa-user"></i> </span>
+            <input type="text" class="form-control" placeholder="username" id="userName" onkeyup="validateName()" >
+
+
+
+          </div> <!-- end of input-group -->
+
+
+</div> <!-- end of col-8 -->
+
+<div class="col-4">
+  
+   <span id="nameError"></span>
+</div> <!-- end of col-4-->
+       
+          
+
+
+
+
+        </div> <!-- end of row -->
+
+          
+<div class="row">
+  
+
+
+<div class="col-8">
+  <div class="input-group">
+
+    <span>Password</span>
+
+          <span class="input-group-addon">
+<i class="fa fa-lock"></i> 
+
+          </span>
+          <input type="password" class="form-control" placeholder="Password" id="userPassword" 
+         onkeyup="validatePassword()">
+        
+        </div>
+        <!-- end of input-group -->
+ 
+
+</div> <!-- end of col-8 -->
+
+<div class="col-4">
+  
+<span id="passwordError"></span>
+</div> <!-- end of col-4 -->
+         
+
+</div> <!-- end of row -->
+
+       
+        
+
+
+ 
+
+
+
+        </form>
+        <!--end of form-->
+
+      </div>
+      <!--end of modal-body-->
+
+      <div class="modal-footer">
+         <button type="submit" name="submit" class="btn btn-primary">Login</button>
+
+      </div> <!-- end of modal-footer -->
+
+    </div>
+    <!--end of modal-content-->
+
+  </div>
+  <!--end of modal-dialog-->
+
+</div>
+<!--end of modal-->
+
+
+<!-- ----------------------------------
+                   modal
+         
+         ------------------------------  -->         
+
+<!--registation  in modal-->
+<div class="modal fade" id="registationModal">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" data-dismiss="modal"> &times; </button>
+        <h3>Registration For MemberShip</h3>
+      </div>
+      <!--end of modal-header-->
+
+      <div class="modal-body">
+        <form class="form-horizontal">
+
+          <p>* field are required</p>
+
+       
+<!-- name -->
+          <div class="form-group">
+            <div class="col-2">
+              <label for="name"  class="label-control"> Name *</label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">
+              <input type="text" id="name" class="form-control" placeholder="your name" autofocus onkeyup="validateRegistrationName()">
+            </div> <!-- end of col-6 -->
+
+            <div class="col-4">
+              <span id="registationNameError">&nbsp; </span>
+            </div> <!-- end of col-4 -->
+
+          </div> <!-- end of form-group -->
+
+    
+    <!-- email -->
+          <div class="form-group">
+            <div class="col-2">
+              <label for="email" class="label-control">Email * </label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">
+              <input type="text" id="email" class="form-control" placeholder="example@gmail.com" onkeyup="validateEmail()">
+            </div> <!-- end of col-6-->
+
+
+               <div class="col-4">
+              <span id="emailError">&nbsp; </span>
+            </div> <!-- end of col-4 -->
+
+
+          </div> <!-- end of form-group -->
+
+<!-- phone -->
+
+                    <div class="form-group">
+            <div class="col-2">
+              <label for="phone" class="label-control"> Phone *</label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">
+              <input type="text" id="phone" class="form-control" placeholder="e.g.98678788788" value="+977" onkeyup="validatePhone()">
+            </div> <!-- end of col-6 -->
+
+               <div class="col-4">
+
+
+<!-- address -->
+                    <div class="form-group">
+            <div class="col-2">
+              <label for="address" class="label-control"> Address </label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">>
+              <input type="text" id="address" class="form-control" placeholder="city name">
+            </div> <!-- end of col-6 -->
+
+          </div> <!-- end of form-group -->
+
+<!-- gender -->
+                    <div class="form-group">
+            <div class="col-2">
+              <label for="gender" class="label-control"> Gender *</label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-10">
+             <span>Male</span> <input type="radio" name="gender" value="male" checked="true">
+             <span>Female</span> <input type="radio" name="gender" value="female">
+             <span>Other</span> <input type="radio" name="gender" value="other">
+
+            </div> <!-- end of col-10 -->
+
+          </div> <!-- end of form-group -->
+
+<!-- dob -->
+
+                    <div class="form-group">
+            <div class="col-2">
+              <label for="date" class="label-control">Date Of Birth *</label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">
+              <input type="date" id="date" class="form-control" min="1950-01-01" max="2017-01-01" onkeyup="validateDate()">
+            </div> <!-- end of col-6 -->
+               <div class="col-4">
+              <span id="dateError">&nbsp; </span>
+            </div> <!-- end of col-4 -->
+
+          </div> <!-- end of form-group -->
+
+
+<!-- credit -->
+
+                    <div class="form-group">
+            <div class="col-2">
+              <label for="creditNumber" class="label-control">Credit * </label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">
+              <input type="" id="creditNumber" class="form-control" placeholder="credit card number" onkeyup="validateVisa()">
+            </div> <!-- end of col-6 -->
+               <div class="col-4">
+              <span id="creditError">error </span>
+            </div> <!-- end of col-4 -->
+
+          </div> <!-- end of form-group -->
+
+
+<!-- password -->
+
+                    <div class="form-group">
+            <div class="col-2">
+              <label for="Password" class="label-control">Password * </label>
+            </div> <!-- end of col-2 -->
+
+            <div class="col-6">
+              <input type="password" id="password" class="form-control" placeholder="password should be at least 6 " onkeyup="validatePass()">
+            </div> <!-- end of col-6 -->
+               <div class="col-4">
+              <span id="passError">&nbsp; </span>
+            </div> <!-- end of col-4 -->
+
+          </div> <!-- end of form-group -->
+
+
+
+
+        </form>
+        <!--end of form-->
+
+      </div>
+      <!--end of modal-body-->
+
+      <div class="modal-footer">
+        <span>all your information will kept private</span>
+         <button type="submit" name="register" class="btn btn-primary">Register</button>
+
+      </div> <!-- end of modal-footer -->
+
+    </div>
+    <!--end of modal-content-->
+
+  </div>
+  <!--end of modal-dialog-->
+
+</div>
+<!--end of  registration modal-->
+
+
+
+<div class="wrapper">
+  <!--sidebar-->
+
+  <div class=" pull-left navbar-inverse" id="sidebar">
+    <ul class="sidebar-nav  ">
+      <h2 style="color: white">Products</h2>
+      <li class="page-header">Laptop</li>
+      <li><a href="#">Dell</a></li>
+      <li><a href="#">Acer</a></li>
+      <li><a href="#">Lenevo</a></li>
+      <li><a href="#">Asus</a></li>
+      <li class="page-header">Cell-Phone</li>
+      <li><a href="#">Samsung</a></li>
+      <li><a href="#">Nokia</a></li>
+      <li><a href="#">oppo</a></li>
+      <li class="page-header">Electronics</li>
+      <li><a href="#">Solar</a></li>
+      <li><a href="#">Heater</a></li>
+      <li><a href="#">Telivision</a></li>
+      <li><a href="#">Washing Machine</a></li>
+    </ul>
+  </div>
+  <!--end of sidebar-wrapper-fixed-left-->
+
+  <!--carousel slide-->
+
+  <div class="carousel slide" id="myCarousel">
+    <!--indicators-->
+    <ol class="carousel-indicators" >
+      <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+      <li  data-slide-to="1" data-target="#myCarousel"></li>
+    </ol>
+
+    <!--wrapper cass for carousel-->
+    <div class="carousel-inner">
+      <div class="item active" id="slide1"> <img src="images/slide1.jpg" alt="">
+        <div class="carousel-caption">
+          <h4>Dell Laptop</h4>
+          <p>Dell inspiron 3421 is the best choice for new generation </p>
+        </div>
+        <!-- end of carousel-caption-->
+
+      </div>
+      <!--end of item-->
+
+      <div class="item" id="slide2"> <img src="images/slide2.jpg" alt="">
+        <div class="carousel-caption">
+          <h4>Acer Laptop</h4>
+          <p>Acer is the best choice for new generation </p>
+        </div>
+        <!-- end of carousel-caption-->
+
+      </div>
+      <!--end of item-->
+
+    </div>
+    <!--end of carousel-inner-->
+
+    <!--  controls-->
+
+    <a href="#myCarousel" class="left carousel-control" data-slide="prev"><span class="icon-prev"></span></a> <a href="#myCarousel" class="right carousel-control" data-slide="next"><span class="icon-next"></span></a> </div>
+  <!--end of carousel-->
+  <h2>Shop Nepal</h2>
+  <p class="lead">shopnepal.com is newly created ecommerce site</p>
+</div>
+<!--end of wrapper-->
+
+<div class="container" id="main" >
+  <div class="row">
+    <div class="col-12">
+      <h2 class="lead">Top Treanding Laptops</h2>
+    </div>
+    <!--end of col-12-->
+  </div>
+  <!-- end of row-->
+
+  <div class="row" id="laptopFeatures">
+    <div class="col-sm-4 features">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 class="panel-title">Dell Inspiron 3421</h4>
+        </div>
+        <!--end of panel heading-->
+
+        <img src="images/laptopFeature1.jpg" alt="laptop is very cheap">
+        <p>price:50000 rs</p>
+        <p>Ram: 2gb</p>
+        <button class="btn btn-info btn-block">View detail</button>
+      </div>
+      <!--end of panel-->
+    </div>
+    <!--end of col-sm-4 features-->
+
+    <div class="col-sm-4 features">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 class="panel-title">Dell Inspiron 3421</h4>
+        </div>
+        <!--end of panel heading-->
+
+        <img src="images/laptopFeature1.jpg" alt="laptop is very cheap">
+        <p>price:50000 rs</p>
+        <p>Ram: 2gb</p>
+        <button class="btn btn-info btn-block">View detail</button>
+      </div>
+      <!--end of panel-->
+    </div>
+    <!--end of col-sm-4 features-->
+
+    <div class="col-sm-4 features">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 class="panel-title">Dell Inspiron 3421</h4>
+        </div>
+        <!--end of panel heading-->
+
+        <img src="images/laptopFeature1.jpg" alt="laptop is very cheap">
+        <p>price:50000 rs</p>
+        <p>Ram: 2gb</p>
+        <button class="btn btn-info btn-block">View detail</button>
+      </div>
+      <!--end of panel-->
+    </div>
+    <!--end of col-sm-4 features-->
+
+  </div>
+  <!--end of laptopFeatures-->
+
+  <div class="row">
+    <div class="col-12">
+      <h2 class="lead">Top Treanding Phones</h2>
+    </div>
+    <!--end of col-12-->
+  </div>
+  <!-- end of row-->
+  <div class="row" id="moblieFeatures">
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 class="lead">Pixel Phone</h4>
+        </div>
+        <!--end of panel heading-->
+        <img src="images/moblileHeading1.jpg" alt="mobile section">
+        <p class="lead">This phone have 13mp rear camera with autofocus feature </p>
+        <button class="btn btn-info btn-block">View detail</button>
+      </div>
+      <!--end of panel-->
+
+    </div>
+    <!--end of  col-sm-4-->
+
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 class="lead">Pixel Phone</h4>
+        </div>
+        <!--end of panel heading-->
+        <img src="images/moblileHeading1.jpg" alt="mobile section">
+        <p class="lead">This phone have 13mp rear camera with autofocus feature </p>
+        <button class="btn btn-info btn-block">View detail</button>
+      </div>
+      <!--end of panel-->
+
+    </div>
+    <!--end of  col-sm-4-->
+
+    <div class="col-sm-4">
+      <div class="panel">
+        <div class="panel-heading">
+          <h4 class="lead">Pixel Phone</h4>
+        </div>
+        <!--end of panel heading-->
+        <img src="images/moblileHeading1.jpg" alt="mobile section">
+        <p class="lead">This phone have 13mp rear camera with autofocus feature </p>
+        <button class="btn btn-info btn-block">View detail</button>
+      </div>
+      <!--end of panel-->
+
+    </div>
+    <!--end of  col-sm-4-->
+
+  </div>
+  <!--end of mobile heading-->
+
+  <div class="row" id="about"> </div>
+  <!-- end of row-->
+</div>
+<!--end of container-->
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <p>Copyright &copy; 2017 shopnepal</p>
+      </div>
+      <!--end of  col-2-->
+
+      <div class="col-lg-6">
+        <h2>About</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d220.93601079845456!2d85.3264455!3d27.6252546!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1710f57d4a77%3A0xae934ae08d66ec9c!2sDhapakhel+VDC+Health+Post!5e0!3m2!1sen!2snp!4v1510478607023" width="200" height="100" frameborder="5" style="border:5px" allowfullscreen  class=" pull-right thumbnail "> </iframe>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis corporis maxime consequuntur sed sequi voluptatum, expedita repellendus iste porro ducimus consequatur possimus tempore ea fuga ullam eum. Iusto, similique, quas.</p>
+      </div>
+      <!-- end of col-6-->
+      <div class="col-lg-4">
+        <p>Coded with <span class="glyphicon glyphicon-heart"></span> Nepal</p>
+      </div>
+      <!--end of col-lg-4-->
+    </div>
+    <!--end of row-->
+  </div>
+  <!--end of container-->
+
+</footer>
+<!--end of footer-->
+
+
+<!-- All Javascript at the bottom of the page for faster page loading --> 
+
+<!-- First try for the online version of jQuery--> 
+<!-- <script src="http://code.jquery.com/jquery.js"></script>  -->
+
+<!-- If no online access, fallback to our hardcoded version of jQuery --> 
+<script src="include/js/jquery.min.js"></script> 
+
+<!-- Bootstrap JS --> 
+<script src="bootstrap/js/bootstrap.min.js"></script> 
+
+
+
+
+
+</body>
+</html>
+
+

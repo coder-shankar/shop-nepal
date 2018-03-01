@@ -1,0 +1,45 @@
+header .jumbotron{
+	text-align: center;
+	background-color: #071923;
+	color: white;
+
+}
+header{
+	border-radius: 20px;
+}
+#main .row{
+	margin-top: 10px;
+}
+
+body{
+	background:#0E0E2B;
+	color: wheat;
+}
+
+#error{
+	color: red;
+}
+
+
+form .row{
+	text-align: center;
+}
+
+.well{
+	background:#0E0E2B;
+	
+}
+h2 .page-header{
+	color: green;
+}
+
+.product-list{
+	background: green;
+	color: white;
+	text-align: center;
+}
+
+.navbar-responsive-collapse ul li {
+    margin-left: 0px;
+    padding-left: 30px;
+}
