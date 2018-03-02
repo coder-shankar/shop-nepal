@@ -9,13 +9,24 @@ if($conn->connect_error){
 }
 
 
-
+$member_id=$_SESSION['member_id'];
 
 
 // sql rough
 
 
-// $sql ="select * from member as m left outer join cart c on m.cart_cart_id=c.cart_id left OUTER JOIN product_has_cart as pc ON c.cart_id=pc.cart_cart_id LEFT OUTER JOIN product as p ON pc.product_product_id=p.product_id;";
+$sql ="select * from product as p left outer join cart as c on p.product_id= c.product_id WHERE c.member_id='$member_id';";
+
+
+// if (($res=$conn->query($sql))) {
+
+//     $result =mysqli_fetch_array($res,MYSQLI_ASSOC);
+
+// }
+
+
+
+
 
 
 
@@ -53,9 +64,9 @@ if($conn->connect_error){
                     <thead>
                         <tr>
                             <th>sn</th>
-                            <th>product detail</th>
-                            <th>quantity</th>
+                            <th>product</th>
                             <th>price</th>
+                            <th>quantity</th>
                         </tr>
 
                     </thead>
@@ -64,9 +75,47 @@ if($conn->connect_error){
 
                     <tbody>
 
+                         <?php 
+                           $totalPrice=0;
+
+                        $res=$conn->query($sql);
+
+                          while (($result =mysqli_fetch_array($res,MYSQLI_ASSOC))) {
+
+                            $sn=0;
+                          
+
+                            ?>
+    
+                        
+                        <tr>
+                            <td><?php $sn++;
+                            echo $sn; ?></td>
+                            <td> <?php  echo $result['product_title'] ; ?></td>
+
+                            <td>
+                                <?php echo $result['product_price'];
+
+                                    $totalPrice=$totalPrice+(int)$result['product_price']*(int)$result['quantity'];
+                                 ?>
+                            </td>
+
+
+                            <td>
+                                <?php echo $result['quantity']; ?>
+                            </td>
+
+                        </tr>
+
+
+                        <?php } ?>   
+
 
                     </tbody>
                     <!-- end of table body -->
+
+
+                    
 
                 </table>
                 <!-- end of table -->
@@ -76,6 +125,9 @@ if($conn->connect_error){
             <!--end of modal-body-->
 
             <div class="modal-footer">
+                <h3>
+                        Total Price: &nbsp;<?php echo $totalPrice; ?>
+                    </h3>
 
 
             </div>
