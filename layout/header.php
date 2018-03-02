@@ -125,14 +125,11 @@ if ((isset($_COOKIE['user']) && isset($_COOKIE['password'])&&isset($_COOKIE['mem
 
              ?>
             
-        
+ 
 
-          <li><a href="index.php?signout=<?php echo "true"  ?> " >Sign Out</a></li>  
+          <li><a href="sessiontest.php?signout=<?php echo "true"  ?> " >Sign Out</a></li>  
 
-    <?php if (isset($_GET['signout'])) {
-         deleteCookies();
-        header('Refresh: 1; url=index.php');
-            } ?>
+  
 
             <li class="divider"></li>
             <li><a href="#registationModal" data-toggle="modal">Registration</a></li>

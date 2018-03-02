@@ -6,8 +6,7 @@ session_start();
 if(isset($_POST['submit'])) {
 
 include('../connection.php');
-
-
+ 
 
 //create connection 
 
@@ -22,7 +21,7 @@ $userpassword=md5($userpasswords);
 
 
 //sql statement 
-$sql ="SELECT admin_username admin_password From admin WHERE admin_username='$username' AND admin_password='$userpassword';";
+$sql ="SELECT * From admin WHERE admin_username='$username' AND admin_password='$userpassword';";
 
 //executin sql query statemnt 
 $result=$conn->query($sql);

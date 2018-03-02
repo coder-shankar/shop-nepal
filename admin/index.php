@@ -20,6 +20,25 @@ $result=$product->fetchProduct();
 <head>
 	<title>Admin Panel</title>
 
+
+<!--bootstrap css-->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+
+<!-- font awesome icon  online if available-->
+<link href="//maxcdn.bootstrapcdn.0com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!-- font awesome icon if not available -->
+<link rel="stylesheet" href="../include/css/font-awesome.css">
+
+
+<!-- Include Modernizr in the head, before any other Javascript -->
+<script src="../include/js/modernizr-2.6.2.min.js"></script>
+<!--custome js-->
+
+
+
+	<!-- custome css -->
+
 	<link rel="stylesheet" href="css/index_css.css">
 
 	<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -27,6 +46,90 @@ $result=$product->fetchProduct();
 
 </head>
 <body>
+
+
+	<!-- model for add account -->
+
+
+
+	<!-- 	admin MOdal -->
+
+<div class="modal fade" id="adminModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+			
+				<button class="close" data-dismiss="modal">&times;</button>
+				<p class="lead">Add Admin</p>
+			</div> <!-- end of modal-header -->
+
+			<div class="modal-body">
+
+
+<form action="adminpanel.php" class="form-horizontal" method="post">
+
+
+
+		
+
+			
+				
+			<div class="input-group">
+ <span class="lead">Username</span>
+              <span class="input-group-addon">
+ <i class="fa fa-user"></i> </span>
+            <input type="text" class="form-control" placeholder="username" id="userName" onkeyup="validateName()" name="username">
+
+
+
+          </div> <!-- end of input-group -->
+
+		
+			
+
+
+  
+   <span id="nameError"></span>
+
+
+  <div class="input-group">
+
+    <span class="lead">Password</span>
+
+          <span class="input-group-addon">
+<i class="fa fa-lock"></i> 
+
+          </span>
+          <input type="password" class="form-control" placeholder="Password" id="userPassword" 
+         onkeyup="validatePassword()" name="userpassword">
+        
+        </div>
+        <!-- end of input-group -->
+ 
+
+
+
+  
+<span id="passwordError"></span>
+
+         
+			
+				<div class="well">
+					
+				
+	
+				<button type="submit" name="submit" value="submit" class="btn btn-primary pull-right">Add Admin</button>
+				
+		</div> <!-- end of input-group -->
+
+		</form>
+				
+			</div> <!-- end of modal-body -->
+		</div> <!-- end of modal-content -->
+	</div> <!-- end of modal-dialog -->
+	
+</div> <!-- end of modal -->
+
  
 
 	<header>
@@ -56,7 +159,7 @@ $result=$product->fetchProduct();
 				<li><a href="">Summary</a></li>
 				<li ><a href="" class="active">Products</a></li>
 				<li><a href="">Product Analysis</a></li>
-				<li><a href="">Add Account</a></li>
+				<li><a href="#adminModal" data-toggle="modal">Add Account</a></li>
 			</ul>
 		</div>
 		
@@ -299,6 +402,18 @@ $result=$product->fetchProduct();
 
 
 	<!-- All Javascript at the bottom of the page for faster page loading -->
+
+
+
+<!-- All Javascript at the bottom of the page for faster page loading --> 
+
+
+
+<!-- If no online access, fallback to our hardcoded version of jQuery --> 
+<script>window.jQuery || document.write('<script src="../includes/js/jquery-1.8.2.min.js"><\/script>')</script> 
+
+<!-- Bootstrap JS --> 
+<script src="../bootstrap/js/bootstrap.min.js"></script> 
 
 
  <!-- First try for the online version of jQuery -->

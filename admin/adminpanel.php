@@ -53,6 +53,12 @@ $sql ="INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`, `cre
 
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<!-- custome css -->
+
+	<link rel="stylesheet" href="css/index_css.css">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
 
 <!-- Include Modernizr in the head, before any other Javascript -->
 <script src="../include/js/modernizr-2.6.2.min.js"></script>
@@ -63,7 +69,7 @@ $sql ="INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`, `cre
 
 
 
-<body>
+<body style="color: black;">
 
 
 <!-- 	admin MOdal -->
@@ -168,17 +174,9 @@ end of modal
 
     <div class="navbar-responsive-collapse collapse nav-collapse">
     	<ul class="nav navbar-nav">
-    		<li class="active"><a href="">Home</a></li>
-    		<li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown"> DataBase Management<span class="caret"></span></a>
-    		<ul class="dropdown-menu">
-					
-
-					                <li><a href="product.php">Add Product</a></li>
-					    			<li><a href="">Update Product</a></li>
-					    			<li><a href="">Remove Product</a></li>    			
-
-    		</ul> <!-- end of dropdown menu -->
-
+    		<li ><a href="">Home</a></li>
+    		<li class="dropdown active"><a href="" class="dropdown-toggle" data-toggle="dropdown"> DataBase Management<span class="caret"></span></a>
+    		
     	</li> <!-- end of dropdown -->
     		<li><a href="summary.php">Summary</a></li>
     		<li class="dropdown" id="accountDropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown">Account <span class="caret"></span></a>
@@ -219,8 +217,262 @@ end of modal
 
 
 
-<div class="container lead" id="main">
+<div class="container lead" id="main" style="color: yellow;">
 	<h2 class="page-header">This is Admin Panel <span>Welcome <?php echo $_SESSION['admin']; ?></span></h2>
+
+
+
+
+
+<div class="row">
+
+	<div class="well">
+
+
+
+
+		<form action="success.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
+
+
+				<div class="container">
+
+					<h2>Product Detail:</h2>
+
+					<div class="form-element">
+					<label for="product_title">Title</label>
+					<input type="text" name="product_title" id="product_title">
+					</div>
+					
+
+					<div class="form-element">
+					<label for="product_price">Price</label>
+					<input type="text" name="product_price" id="product_price">
+					</div>
+
+
+					<div class="form-element">
+					<label for="product_detail">Detail</label>
+					<input type="text" name="product_detail" id="product_detail">
+
+					
+					<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
+
+
+					<script type="text/javascript">
+						
+					CKEDITOR.replace('product_detail');
+					</script><!-- end of ckeditor -->
+					</div>
+
+
+					<div class="form-element">
+					<label for="product_image">Image</label>
+					<input type="file" name="product_image" id="product_image">
+					</div>
+
+					
+					<div class="form-element">
+					<label for="product_type">Select Product type</label>
+					
+					<select id="product_type">
+						<option>--Select product--</option>
+							<option value="laptop">Laptop</option>	
+							<option value="phone">Phone</option>
+					</select>
+
+					</div>
+
+
+					<!-- input for laptop detail -->
+
+					<div class="laptop">
+
+						<h3>Laptop Detail:</h3>
+
+						<div class="form-element">
+					<label for="model">Model</label>
+					<input type="text" name="model" id="model">
+					</div>
+
+					<div class="form-element">
+					<label for="cpu">Cpu</label>
+					<input type="text" name="cpu" id="cpu">
+					</div>
+
+
+					<div class="form-element">
+					<label for="harddisk">Harddisk</label>
+					<input type="text" name="harddisk" id="harddisk">
+					</div>
+
+					<div class="form-element">
+					<label for="os">Operatin System</label>
+					<input type="text" name="os" id="os">
+					</div>
+
+
+					<div class="form-element">
+					<label for="ram">Memory</label>
+					<input type="text" name="ram" id="ram">
+					</div>
+
+
+
+					<div class="form-element submit">
+					<input type="submit" value="submit" name="laptopproductSubmit">
+				</div>
+
+
+
+						
+					</div> <!-- end of laptop -->
+
+
+
+					<div class="phone">
+						<h3>Phone Detail</h3>
+
+
+						<div class="form-element">
+					<label for="model">Model</label>
+					<input type="text" name="model" id="model">
+
+
+
+					</div>
+
+
+					<div class="form-element">
+					<label for="screen">Screen</label>
+					<input type="text" name="screen" id="screen">
+					</div>
+
+
+
+					<div class="form-element">
+					<label for="os">Operatin System</label>
+					<input type="text" name="os" id="os">
+					</div>
+
+
+					<div class="form-element">
+					<label for="sensor">Sensor </label>
+					<input type="text" name="sensor" id="sensor">
+					</div>
+
+
+					<div class="form-element">
+					<label for="camera">Camera</label>
+					<input type="text" name="camera" id="camera">
+					</div>
+
+
+
+					<div class="form-element submit">
+					<input type="submit" value="submit" name="phoneproductSubmit">
+						</div>
+					</div> <!-- end of phone -->
+
+
+
+				
+					
+
+
+				</div>
+
+
+
+			</form>
+		
+	</div> <!-- end of well -->
+	
+</div> <!-- end of row -->
+
+<hr>
+		<h2>Delete and Edit product</h2>
+<hr>
+
+<div class="row">
+
+	<div class="well">
+
+
+<table class="table">
+
+	<tr>
+		<th>selecet</th>
+		<th>Product Name</th>
+		<th>Product price</th>
+		
+		<th>Last update</th>
+		<th>Image</th>
+	</tr>
+
+	<?php
+
+
+		//create connection 
+$conn=new mysqli("localhost","root","","shopnepaldb");
+//if connection error occured
+if($conn->connect_error){
+  die ("connection failed").$conn->connect-error;
+	// otherwise returen conneciton
+
+	}
+
+$sql ="SELECT * FROM `product`;";
+$result=$conn->query($sql);
+
+
+
+
+
+	 while($products=mysqli_fetch_array($result,MYSQLI_ASSOC) ){ ?>
+
+	<tr>
+		<td>
+			<input type="checkbox" name="check_list" value="<? echo $products['product_id'] ?>">
+		</td>
+		<td> <?php echo $products['product_title']?></td>
+		<td> <?php echo $products['product_price']?></td>
+
+
+		<td>
+			 <?php echo $products['last_modified']?>
+		</td>
+
+		<td>
+			
+       <?php echo '<img  class="img-rounded"src="images/'.$products['image'].'"  style="width:100px;height:100px" />';
+ ?>
+		</td>
+		<td>
+			<a class="btn btn-primary" >Update</a>
+			
+			<br><br>
+			<a class="btn btn-danger" href="delete.php?deleteItem=1&id=<?php echo $products['product_id']?>">Delete</a>
+		</td>
+	</tr>
+	
+<?php } ?>
+
+<tr>
+	<td><button class="btn btn-info">Delete Selected</button></td>
+</tr>
+</table>
+
+		
+	</div> <!-- end of well -->
+	
+</div> <!-- end of row -->
+
+
+
+
+
+
+
 
 
 
@@ -285,112 +537,6 @@ $results=$product->fetchProduct();
 
 
 	
-
-	<div class="row mainrow">
-		<div class="col-xs-4">
-			<a class="btn btn-primary">Add Products</a>
-			<a class="btn btn-primary">Edit Products</a>
-
-		</div> <!-- end of col-4 -->
-		
-	</div> <!-- end of row -->
-	<div class="row">
-			<div class="col-xs-4">
-
-			<a class="btn btn-primary">Update Products</a>
-			<a class="btn btn-primary">Delete Products</a>
-				
-			</div> <!-- end of col-4 -->
-		</div> <!-- end of row -->
-		
-
-
-
-	<div class="container">
-		<div class="row">
-			
-
-
-		<div class="col-8" style="border:2px solid green;">
-	
-
-	<form action="success.php" class="form-horizontal" method="post" enctype="multipart/form-data" target="_blank">
-
-			<h2>Product</h2>
-
-			<div class="form-group">
-				<label for="product_title">Product Title</label>
-				<input type="text" placeholder="product title" id="product_title" name="product_title" class="form-control">
-				
-			</div> <!-- end of form-group -->
-
-<div class="form-group">
-				<label for="product_price">Product Name</label>
-				<input type="text" placeholder="product price" id="product_price" name="product_price" class="form-control">
-				
-			</div> <!-- end of form-group -->
-<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
-
-			<div class="form-group">
-
-				<label for="product_detail">Product Detail</label>
-				<textarea placeholder="product detail" id="product_detail" name="product_detail" class="form-control"></textarea>
-
-					<script type="text/javascript">
-						
-					CKEDITOR.replace('product_detail');
-					</script><!-- end of ckeditor -->
-				
-			</div> <!-- end of form-group -->
-
-		
-
-
-		<div class="form-group">
-			<p>Select an image of product</p>
-			<hr>
-			<input type="file" name="myimage" id="myimage" class="form-control">
-		
-		</div><!--  end of form-group -->
-
-		<div class="page-header">
-			<p class="lead">Laptop Detail</p>
-		</div> <!-- end of page header -->
-
-		<div class="form-group">
-
-			<label for="laptop_name">Laptop Name</label>
-			<input type="text" id="laptop_name" name="laptop_name">
-			
-		</div> <!-- end of form group -->
-
-		<div class="form-group">
-			<label for="laptop_cpu">Cpu:</label>
-			<input type="text" id="laptop_cpu" name="laptop_cpu">
-			
-		</div> <!-- end of form group -->
-
-		<div class="form-group">
-			<label for="laptop_memory">Memory</label>
-			<input type="text" id="laptop_memory" name="laptop_memory">
-			
-		</div> <!-- end of form group -->
-		<div class="form-group">
-			<label for="laptop_hdd">Hard drive</label>
-			<input type="text" id="laptop_hdd" name="laptop_hdd">
-			
-		</div> <!-- end of form group -->
-		
-		
-	<input type="submit" name="submit" class="btn btn-primary" value="submit">
-
-	</form> <!-- end of form -->
-			
-		</div> <!-- end of col-6 -->
-
-		</div> <!-- end of row -->
-		
-	</div> <!-- end of container -->
 	
 </div> <!-- end of main -->
 
@@ -412,7 +558,8 @@ $results=$product->fetchProduct();
 
 <!-- Bootstrap JS --> 
 <script src="../bootstrap/js/bootstrap.min.js"></script> 
-
+<!-- custome js -->
+		<script type="text/javascript" src="js/admin_script.js"></script>
 
 </body>
 </html>

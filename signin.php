@@ -50,7 +50,7 @@ $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 	 	<?php
 
 	 	echo $row['member_id'];
-	 	sleep(10);
+	 	
 	 	$_SESSION['member_id']=$row['member_id'];
 
 	 	echo $_SESSION['member_id'] ;

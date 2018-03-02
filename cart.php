@@ -79,7 +79,7 @@ $product_id=$_SESSION['id'];
 
 
     header("Location: {$_SERVER['HTTP_REFERER']}");
-    exit;
+    exit();
 
 	}
 	else{

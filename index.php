@@ -10,7 +10,7 @@
 <!--website description tilte -->
 <title>Shop Nepal</title>
 
-  <meta name="viewport" content="width=device-width,intial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!--bootstrap css-->
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">

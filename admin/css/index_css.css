@@ -5,12 +5,16 @@
 }
 
 
+.well{
+	overflow: hidden;
+}
 
 body{
 
 background: linear-gradient(to bottom, #4e1a56 0%,#54058c 100%);
 
 background-attachment: fixed;
+color: black;
 
 
 }
@@ -28,13 +32,6 @@ h1{
 
 }
 
-
-.container{
-	margin: 0 auto;
-	max-width: 1024px;
-	width: 80%;
-
-}
 
 
 nav {
