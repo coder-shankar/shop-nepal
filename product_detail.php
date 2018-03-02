@@ -2,24 +2,25 @@
 
 <?php 
 session_start();
-
-//including the product.php to access it function 
-require_once('product.php');
-$product=new Product();
-//getting the product id from the url
+//create connection 
+$conn=new mysqli("localhost","root","","shopnepaldb");
+//if connection error occured
+if($conn->connect_error){
+  die ("connection failed").$conn->connect-error;
+}
 $product_id=$_GET['id'];
 
-//query statement  s
+//query statement 
 $sql="SELECT * FROM product WHERE product_id='$product_id';";
 
 
 //querying from database 
-$results =$product->productQuery($sql);
+$results =$conn->query($sql);
 $products=mysqli_fetch_array($results,MYSQLI_ASSOC);
 
 
 //checking if the query is sucessfull or not
-if (!$products) {
+if (!$products) { 
   echo '<script> alert("database connection problem");</script>';
 }
 
@@ -108,9 +109,9 @@ if (!$products) {
 <h3><span>15% discount </span></h3>
 
 
+<?php $_SESSION['id']= $_GET['id']?>
 
-
-  <a href="#cartModal" data-toggle="modal" class="btn btn-primary btn-block">
+  <a href="http://localhost/shopnepal/cart.php?cart=true" data-toggle="modal" class="btn btn-primary btn-block">
    Add to Cart</a>
   <a href="#" class="btn btn-primary btn-block">Buy</a>
   
@@ -181,3 +182,4 @@ if (!$products) {
 
 
 
+<?php  ?>
