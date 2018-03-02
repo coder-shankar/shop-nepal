@@ -23,38 +23,37 @@ $userpassword=md5($userpasswords);
 
 
 //sql statement 
-$sql ="SELECT name password From member WHERE name='$username' AND password='$userpassword';";
+$sql ="SELECT * From member WHERE name='$username' AND password='$userpassword';";
 
-//executin sql query statemnt 
-$result=$conn->query($sql);
-echo "query executed";
-//fetch row 
-$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+
 
 
 //checking whether result is null or not 
-if (is_null($row)) {
-	 echo "sign in unsucessful";
-	 echo '<style> background:red;</style>';
+if (($result=$conn->query($sql))) {
 
-	 echo '<script>
-	 alert("please enter correct username and password");
-	  window.location.href="index.php";
-
-	 </script>
-	
-	 ';
-	 	
-	 }
-	 else{
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 	 	// create the session variable  user
 	 	$_SESSION['user']=$username;
 	 	echo "query executed sucessfully";
 	 	echo $_SESSION['user'];
 
-	 	//creatig the member_id as session variable
+	 	//creatig the member_id as session 
+	 	//variable
+	 	?>
+
+	 	<script>
+	 		alert('<?php echo $row['member_id']?>');
+	 </script>"
+
+	 	<?php
+
+	 	echo $row['member_id'];
+	 	sleep(10);
 	 	$_SESSION['member_id']=$row['member_id'];
+
+	 	echo $_SESSION['member_id'] ;
 
 
 if (isset($_SESSION['member_id'])) {
@@ -116,9 +115,11 @@ if ($_POST['keepSignIN']) {
 //if id is set to 
 	 	if (isset($_GET['id'])) {
 	 		header('Location:product_detail.php?user='.$username);
+	 		exit();
 	 	}
 	 	else{
 	 		header('Location:index.php');
+	 		exit();
 	 	}
 	 
 

@@ -40,8 +40,6 @@ $sql ="INSERT INTO `member` (`member_id`, `name`, `email`, `phone`, `address`, `
 
 
 
-// INSERT INTO `member` (`member_id`, `name`, `email`, `phone`, `address`, `gender`, `dob`, `credit`, `password`, `cart_cart_id`) VALUES (NULL, 'shankar', 'shankarghimire8766@gmail.com', '9843783799', 'lalitpur ', 'male', '05/2/1997', '444444444443333333333', 'root', '1');
-
 
 //checking whether the query is sucessful or not
 

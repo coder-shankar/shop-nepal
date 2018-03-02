@@ -1,6 +1,37 @@
 <?php 
-// include 'cart.php'; 
-?>
+
+
+//create connection 
+$conn=new mysqli("localhost","root","","shopnepaldb");
+//if connection error occured
+if($conn->connect_error){
+  die ("connection failed").$conn->connect-error;
+}
+
+
+
+
+
+// sql rough
+
+
+// $sql ="select * from member as m left outer join cart c on m.cart_cart_id=c.cart_id left OUTER JOIN product_has_cart as pc ON c.cart_id=pc.cart_cart_id LEFT OUTER JOIN product as p ON pc.product_product_id=p.product_id;";
+
+
+
+
+
+ ?>
+
+
+
+
+
+
+
+
+
+
 
 <!--cart in modal-->
 <div class="modal fade" id="cartModal" role="dialog">
@@ -16,8 +47,7 @@
 
 
                 <!-- take all data from table cart -->
-                <!-- connection to db -->
-                <?php include('cart.php'); ?>
+               
 
                 <table class="table">
                     <thead>

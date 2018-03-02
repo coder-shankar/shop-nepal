@@ -24,15 +24,12 @@ if (!$products) {
   echo '<script> alert("database connection problem");</script>';
 }
 
+
+
+
  ?>
 
 
-
-<?php 
-
-// require_once('cartmodal.php');
-
- ?>
 
 
 
@@ -164,11 +161,11 @@ if (!$products) {
 
 <!-- All Javascript at the bottom of the page for faster page loading --> 
 
-<!-- First try for the online version of jQuery--> 
-<script src="http://code.jquery.com/jquery.js"></script> 
+ <!-- First try for the online version of jQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 
 <!-- If no online access, fallback to our hardcoded version of jQuery --> 
-<script>window.jQuery || document.write('<script src="include/js/jquery-1.8.2.min.js"><\/script>')</script> 
+<script src="include/js/jquery.min.js"></script> 
 
 <!-- Bootstrap JS --> 
 <script src="bootstrap/js/bootstrap.min.js"></script> 
@@ -180,6 +177,30 @@ if (!$products) {
 
 
 
+<?php 
+//checking wheater user is sign in ornot
+if (!isset($_SESSION['member_id'])) {
+  echo "<script>alert('Please sign in or do registration first');</script>";
+  $cart ="false";
+
+?>
 
 
-<?php  ?>
+
+<script type="text/javascript">
+       $(document).ready(function() {
+            $('#signModal').modal('show');
+        });
+
+
+  </script>
+
+<?php
+
+
+
+  }
+
+ $cart ="true";
+
+ ?>

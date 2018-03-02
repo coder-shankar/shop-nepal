@@ -23,37 +23,91 @@ if($conn->connect_error){
 //checking whether the member has sign in or not
 // $member_id=$_SESSION['member_id'];
 if (!isset($_SESSION['member_id'])) {
-	echo "<script>alert('Please sign in or do registration first');</script>";
 
-	header('Location:index.php');
+
+
+?>
+
+
+<script>
+	javascript:history.go(-1);
+</script>
+
+<?php
+
+	
+}
+
+
+
+
+else{
+
+
+	
+
+$member_id=$_SESSION['member_id'];
+$product_id=$_SESSION['id'];
+
+
+	// retriving cart id from database
+
+	$sql="SELECT * FROM `member` WHERE member.member_id='$member_id';";
+
+	$res=$conn->query($sql);
+
+	if ($res) {
+
+		// fetch cart id
+		$result=mysqli_fetch_array($res,MYSQLI_ASSOC);
+
+		$cart_id=$result['cart_cart_id'];
+		
+
+			//insert the data into data base
+
+	$sql="INSERT INTO `cart` (`cart_id`, `quantity`, `member_id`, `product_id`) VALUES ('$cart_id', '2', '$member_id', '$product_id');";
+
+	if (($res=$conn->query($sql))) {
+		
+		?>
+		<script type="text/javascript">
+			alert("Product has been addded to cart");
+		</script>
+
+		<?php
+
+
+    header("Location: {$_SERVER['HTTP_REFERER']}");
     exit;
 
-	
+	}
+	else{
+		echo "product is not added to cart ";
+	}
+
+
+
+
+	}
+
+else{
+	echo "query is not executed it may seems to be database problem";
 }
 
-// else{
 
-
-// $sql ="select * from member as m left outer join cart c on m.cart_cart_id=c.cart_id left OUTER JOIN product_has_cart as pc ON c.cart_id=pc.cart_cart_id LEFT OUTER JOIN product as p ON pc.product_product_id=p.product_id;";
-
-
-// if ($conn->query($sql)) {
-
-	
-// }
-
-
-
-
-
-
-
-
-
-// }
 
 
 
 }
+
+
+}
+
+else{
+echo "get cart is not true";
+}
+
  ?>
+
 
