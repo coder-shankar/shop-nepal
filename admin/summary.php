@@ -69,7 +69,7 @@ $results=$product->fetchProduct();
 <script src="../include/js/modernizr-2.6.2.min.js"></script>
 
 </head>
-<body>
+<body style="background-color: white; font-size: 20px;">
 
 
 	<!-- 	admin MOdal -->
@@ -200,7 +200,7 @@ $results=$product->fetchProduct();
 	</header> <!-- end of header -->
 
 
-	<div class="container" id="main">
+	<div class="container" id="main" style="background-color: white; font-size: 20px;">
 
 		<div class="row table-responsive">
 			<table class="table-striped table detail" style="color: green;">
@@ -221,7 +221,7 @@ $results=$product->fetchProduct();
 						<?php while ($products=mysqli_fetch_array($results,MYSQLI_ASSOC)) { ?>
 
 				<tr>
-				<td><?php echo $products['admin_username']; ?></td>
+				<td><?php echo $products['admin_id']; ?></td>
 				<td><?php echo $products['product_title']; ?></td>
 				<td><?php echo $products['last_modified'] ?></td>
 			</tr> <!-- end of row -->

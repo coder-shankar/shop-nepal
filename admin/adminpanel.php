@@ -480,11 +480,15 @@ $result=$conn->query($sql);
 
 	<?php 
 
-//database connection 
-include('../product.php');
-//fetching the product from database 
-$product=new Product();
-$results=$product->fetchProduct();
+
+				//create connection 
+$conn=new mysqli("localhost","root","","shopnepaldb");
+//if connection error occured
+if($conn->connect_error)
+  die ("connection failed").$conn->connect-error;
+
+$sql="SELECT * FROM product;";
+$results=$conn->query($sql);
 
  ?>
 
@@ -517,7 +521,6 @@ $results=$product->fetchProduct();
 				<td><?php echo $i; $i++; ?></td>
 				<td><?php echo $products['product_title']; ?></td>
 				<td><?php echo $products['product_detail'] ?></td>
-				<td><?php echo $products['product_quantity']; ?></td>
 				<td><?php echo $products['last_modified']; ?></td>
 			</tr> <!-- end of row -->
 				
