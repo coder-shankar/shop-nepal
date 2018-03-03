@@ -127,6 +127,8 @@ $sql ="select * from product as p left outer join cart as c on p.product_id= c.p
             <div class="modal-footer">
                 <h3>
                         Total Price: &nbsp;<?php echo $totalPrice; ?>
+
+                        <a href="http://localhost/shopnepal/paypal/member/payment.php?price= <?php echo $totalPrice ?>" class="btn btn-primary">Buy All</a>
                     </h3>
 
 

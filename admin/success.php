@@ -18,6 +18,7 @@ $image=$_FILES['product_image']['name'];
 $product_title=$_POST['product_title'];
 $product_price=$_POST['product_price'];
 $product_detail=$_POST['product_detail'];
+$product_quantity=$_POST['product_quantity'];
 $date=date('Y-m-d H:i:s');
 $model =$_POST['model'];
 $cpu =$_POST['cpu'];
@@ -41,7 +42,7 @@ $product=new Product();
 
 
  	//sql rough
- 	$sql="INSERT INTO `product` (`product_id`, `product_title`, `product_price`, `product_detail`, `image`, `last_modified`, `admin_id`) VALUES (NULL, '$product_title', '$product_price', '$product_detail', '$image', '$date', '1');";
+ 	$sql="INSERT INTO `product` (`product_id`, `product_title`, `product_price`, `product_detail`, `image`, `last_modified`, `admin_id`, `product_quantity`) VALUES (NULL, '$product_title', '$product_price', '$product_detail', '$image', '$date', '$_SESSION['admin_id']','$product_quantity');";
 
 echo $product->productQuery($sql);
 

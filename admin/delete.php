@@ -1,6 +1,9 @@
 <?php 
 
 
+//error
+//also delete from sub categories
+
 if (isset($_GET['deleteItem'])) {
 
 

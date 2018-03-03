@@ -1,4 +1,5 @@
 <?php 
+session_start();
 
 use PayPal\Api\Payer;
 use PayPal\Api\Details;
@@ -8,6 +9,9 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 
 require '../src/start.php';
+
+
+if (isset($_SESSION['member_id'])) {
 
 
 $payer=new Payer();
@@ -81,6 +85,20 @@ if ($link->getRel()=='approval_url') {
 
 }
 header('Location:'.$redirectUrls);
+}
+
+
+	
+
+
+
+}
+
+else{
+	echo "<script>alert('Please sign in first');</script>";
+	
+	header('Location: ' . $_SERVER['HTTP_REFERER']);
+
 }
 
 

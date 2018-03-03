@@ -270,6 +270,12 @@ end of modal
 					<input type="file" name="product_image" id="product_image">
 					</div>
 
+
+					<div class="form-element">
+					<label for="product_quantity">No Of Product</label>
+					<input type="number" name="product_quantity" id="product_quantity">
+					</div>
+
 					
 					<div class="form-element">
 					<label for="product_type">Select Product type</label>

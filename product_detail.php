@@ -10,6 +10,8 @@ if($conn->connect_error){
 }
 $product_id=$_GET['id'];
 
+$_SESSION['product_id']=$product_id;
+
 //query statement 
 $sql="SELECT * FROM product WHERE product_id='$product_id';";
 
@@ -110,7 +112,7 @@ if (!$products) {
 
   <a href="http://localhost/shopnepal/cart.php?cart=true" data-toggle="modal" class="btn btn-primary btn-block">
    Add to Cart</a>
-  <a href="#" class="btn btn-primary btn-block">Buy</a>
+  <a href="http://localhost/shopnepal/paypal/member/payment.php" class="btn btn-primary btn-block">Buy</a>
   
 
 </div> <!-- end of sell -->
@@ -138,6 +140,7 @@ if (!$products) {
         <tr><td>Product Name:</td> <td> <?php  echo $products['product_title']; ?></td></tr>
       <tr> <td>Price:</td><td><?php echo $products['product_price']; ?> </td></tr>
       <tr><td>Product Detail:</td> <td><?php echo $products['product_detail']; ?> </td></tr>
+      <tr><td>Product ON stock:</td> <td><?php echo $products['product_quantity']; ?> </td></tr>
       </tbody> <!-- end of tbody -->
     </table> <!-- end of table -->
     </div> <!-- end of table-responsive -->

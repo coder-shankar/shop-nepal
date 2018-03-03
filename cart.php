@@ -69,6 +69,24 @@ $product_id=$_SESSION['id'];
 	$sql="INSERT INTO `cart` (`cart_id`, `quantity`, `member_id`, `product_id`) VALUES ('$cart_id', '2', '$member_id', '$product_id');";
 
 	if (($res=$conn->query($sql))) {
+
+		$sql="UPDATE product as p  SET p.product_quantity=p.product_quantity-1 WHERE p.product_id='$product_id' AND p.product_quantity>0; ";
+
+		if (($res=$conn->query($sql))) {
+
+			echo "product decremented sucessfully";
+
+
+		}
+		else{
+			echo "Product seems to be out of stock";
+			sleep(3);
+		}
+
+
+
+
+
 		
 		?>
 		<script type="text/javascript">
