@@ -13,6 +13,34 @@ require '../src/start.php';
 
 if (isset($_SESSION['member_id'])) {
 
+	$mid=$_SESSION['member_id'];
+
+
+	if (isset($_GET['cart'])) {
+		
+
+		if ($_GET['cart']=='true') {
+
+			//create connection 
+$conn=new mysqli("localhost","root","","shopnepaldb");
+//if connection error occured
+if($conn->connect_error){
+  die ("connection failed").$conn->connect-error;
+}
+
+			$sql ="DELETE FROM `cart` WHERE cart.member_id='$mid';";
+
+
+			if ($conn->query($sql)) {
+				echo "cart item deleteed ";
+
+				
+
+			}
+
+		}
+	}
+
 
 $payer=new Payer();
 $details=new Details();

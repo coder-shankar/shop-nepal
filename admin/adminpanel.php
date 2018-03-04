@@ -252,7 +252,9 @@ end of modal
 
 					<div class="form-element">
 					<label for="product_detail">Detail</label>
-					<input type="text" name="product_detail" id="product_detail">
+					<textarea id="product_detail" name="product_detail">
+						
+					</textarea>
 
 					
 					<script type="text/javascript" src="../ckeditor/ckeditor.js"></script>
@@ -261,6 +263,18 @@ end of modal
 					<script type="text/javascript">
 						
 					CKEDITOR.replace('product_detail');
+
+
+                      var product_detail = CKEDITOR.instances.product_detail; 
+						//on `key` event
+						product_detail.on('key', function(){
+
+						  var data = product_detail.getData(); //reference to ckeditor data
+						  $('#product_detail').html(data); //update `div` html
+
+						});
+
+
 					</script><!-- end of ckeditor -->
 					</div>
 

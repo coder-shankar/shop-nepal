@@ -104,8 +104,8 @@ $results=$product->fetchProduct();
 
 
         <p class="lead">price:<?php echo $products['product_price'];  ?> rs</p>
-        <p class="lead"><?php echo $products['product_detail']; ?></p>
-       <a href="product_detail.php?id=<?php echo $products['product_id'];  ?> " class="btn btn-block btn-info" target="_blank" >View Detail</a>
+        <div class="lead"><?php echo $products['product_detail']; ?></div>
+       <a href="product_detail.php?id=<?php echo $products['product_id'];  ?>&& type=<?php echo $products['product_type']; ?> " class="btn btn-block btn-info" target="_blank" >View Detail</a>
       </div>
       <!--end of panel-->
     </div>

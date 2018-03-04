@@ -12,8 +12,30 @@ $product_id=$_GET['id'];
 
 $_SESSION['product_id']=$product_id;
 
+$type=$_GET['type'];
+
+if ($type=='laptop') {
+  
+
 //query statement 
-$sql="SELECT * FROM product WHERE product_id='$product_id';";
+$sql="SELECT * FROM product JOIN Laptop  ON  Laptop.product_id=product.product_id WHERE product.product_id='$product_id';";
+
+
+}
+
+else if ($type=='phone') {
+
+//query statement 
+$sql="SELECT * FROM product JOIN phone  ON  phone.product_id=product.product_id WHERE product.product_id='$product_id';";
+
+ 
+}
+
+else{
+  $sql="  SELECT * FROM product WHERE product.product_id='$product_id';";
+
+
+}
 
 
 //querying from database 
@@ -26,6 +48,8 @@ if (!$products) {
   echo '<script> alert("database connection problem");</script>';
 }
 
+
+$product_type=$products['product_type'];
 
 
 
@@ -110,9 +134,21 @@ if (!$products) {
 
 <?php $_SESSION['id']= $_GET['id']?>
 
-  <a href="http://localhost/shopnepal/cart.php?cart=true" data-toggle="modal" class="btn btn-primary btn-block">
-   Add to Cart</a>
+
+<form method="GET" action="http://localhost/shopnepal/cart.php">
+
+  <button type="submit" class="btn btn-primary">
+   Add to Cart 
+ 
+  </button>
+   <input type="number" name="product_quantity" placeholder="1" min="1" max="15" value="1">
+   <input type="hidden" name="cart" value="true">
+    
+ 
+</form>
+<div style="margin-top: 10px;">
   <a href="http://localhost/shopnepal/paypal/member/payment.php" class="btn btn-primary btn-block">Buy</a>
+  </div>
   
 
 </div> <!-- end of sell -->
@@ -141,6 +177,46 @@ if (!$products) {
       <tr> <td>Price:</td><td><?php echo $products['product_price']; ?> </td></tr>
       <tr><td>Product Detail:</td> <td><?php echo $products['product_detail']; ?> </td></tr>
       <tr><td>Product ON stock:</td> <td><?php echo $products['product_quantity']; ?> </td></tr>
+
+
+      <?php 
+      if ($product_type=='laptop') {  ?>
+<tr> <td>Model:</td><td><?php echo $products['model']; ?> </td></tr>
+<tr> <td>Cpu:</td><td><?php echo $products['cpu']; ?> </td></tr>
+<tr> <td>Price:</td><td><?php echo $products['product_price']; ?> </td></tr>
+<tr> <td>Harddisk:</td><td><?php echo $products['harddisk']; ?> </td></tr>
+<tr> <td>Ram:</td><td><?php echo $products['ram']; ?> </td></tr>
+
+<?php
+       
+      } 
+
+      elseif ($product_type=='phone') {?>
+
+        <tr> <td>Model:</td><td><?php echo $products['model']; ?> </td></tr>
+<tr> <td>Screen:</td><td><?php echo $products['screen']; ?> </td></tr>
+<tr> <td>Camera:</td><td><?php echo $products['camera']; ?> </td></tr>
+<tr> <td>Sensor:</td><td><?php echo $products['sensor']; ?> </td></tr>
+<tr> <td>Operating System:</td><td><?php echo $products['os']; ?> </td></tr>
+
+<?php
+
+
+
+      }
+
+      else{
+        echo " <strong>Full product specification is unavailable</strong>";
+      }
+
+
+
+
+      ?>
+
+
+
+
       </tbody> <!-- end of tbody -->
     </table> <!-- end of table -->
     </div> <!-- end of table-responsive -->

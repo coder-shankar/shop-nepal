@@ -26,7 +26,7 @@ $sql ="SELECT * From admin WHERE admin_username='$username' AND admin_password='
 //executin sql query statemnt 
 $result=$conn->query($sql);
 
-$res=mysqli_fetch_array($result,MYSQLI_ASSOC);
+
 
 //fetch row 
   $GLOBALS['row'] = mysqli_fetch_row($result);
@@ -37,7 +37,7 @@ if (is_null($row)) {
 	 }
 	 else{
 	 	$_SESSION['admin']=$username;
-	 	$_SESSION['admin_id']=$res['admin_id'];
+	 	$_SESSION['admin_id']=$row['admin_id'];
 	 	header('Location:adminpanel.php');
 	 
 	 }

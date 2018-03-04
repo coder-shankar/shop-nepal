@@ -96,13 +96,13 @@ $sql ="select * from product as p left outer join cart as c on p.product_id= c.p
                             <td>
                                 <?php echo $result['product_price'];
 
-                                    $totalPrice=$totalPrice+(int)$result['product_price']*(int)$result['quantity'];
+                                    $totalPrice=$totalPrice+(int)$result['product_price']*(int)$result['product_quantity'];
                                  ?>
                             </td>
 
 
                             <td>
-                                <?php echo $result['quantity']; ?>
+                                <?php echo $result['product_quantity']; ?>
                             </td>
 
                         </tr>
@@ -128,7 +128,7 @@ $sql ="select * from product as p left outer join cart as c on p.product_id= c.p
                 <h3>
                         Total Price: &nbsp;<?php echo $totalPrice; ?>
 
-                        <a href="http://localhost/shopnepal/paypal/member/payment.php?price= <?php echo $totalPrice ?>" class="btn btn-primary">Buy All</a>
+                        <a href="http://localhost/shopnepal/paypal/member/payment.php?price= <?php echo $totalPrice ?>&&cart=true" class="btn btn-primary">Buy All</a>
                     </h3>
 
 

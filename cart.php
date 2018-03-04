@@ -3,7 +3,7 @@
 session_start();
 
 
-if ($_GET['cart']==true) {
+if ($_GET['cart']=='true') {
 
 
 	
@@ -50,6 +50,7 @@ $member_id=$_SESSION['member_id'];
 $product_id=$_SESSION['id'];
 
 
+
 	// retriving cart id from database
 
 	$sql="SELECT * FROM `member` WHERE member.member_id='$member_id';";
@@ -62,13 +63,33 @@ $product_id=$_SESSION['id'];
 		$result=mysqli_fetch_array($res,MYSQLI_ASSOC);
 
 		$cart_id=$result['cart_cart_id'];
+
+		if (isset($_GET['product_quantity'])) {
 		
+				$product_quantity=$_GET['product_quantity'];
+
+		}
+		else{
+			$product_quantity=1;
+		}
+		
+		
+
+		echo $product_quantity."<br>";
+		echo $product_id."<br>";
+		echo $cart_id."<br>";
+		echo $member_id;
+
+
+
 
 			//insert the data into data base
 
-	$sql="INSERT INTO `cart` (`cart_id`, `quantity`, `member_id`, `product_id`) VALUES ('$cart_id', '2', '$member_id', '$product_id');";
+	$sql1="INSERT INTO `cart` (`cart_id`, `member_id`, `product_id`,`product_quantity`) VALUES ('$cart_id', '$member_id', '$product_id', '$product_quantity')";
 
-	if (($res=$conn->query($sql))) {
+$res=$conn->query($sql1);
+var_dump($res);
+	if ($res) {
 
 		$sql="UPDATE product as p  SET p.product_quantity=p.product_quantity-1 WHERE p.product_id='$product_id' AND p.product_quantity>0; ";
 
@@ -88,12 +109,7 @@ $product_id=$_SESSION['id'];
 
 
 		
-		?>
-		<script type="text/javascript">
-			alert("Product has been addded to cart");
-		</script>
-
-		<?php
+	
 
 
     header("Location: {$_SERVER['HTTP_REFERER']}");
@@ -102,6 +118,8 @@ $product_id=$_SESSION['id'];
 	}
 	else{
 		echo "product is not added to cart ";
+		
+    header("Location: {$_SERVER['HTTP_REFERER']}");
 	}
 
 
