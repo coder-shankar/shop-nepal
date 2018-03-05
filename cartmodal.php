@@ -79,10 +79,11 @@ $sql ="select * from product as p left outer join cart as c on p.product_id= c.p
                            $totalPrice=0;
 
                         $res=$conn->query($sql);
+                          $sn=0;
 
                           while (($result =mysqli_fetch_array($res,MYSQLI_ASSOC))) {
 
-                            $sn=0;
+                          
                           
 
                             ?>

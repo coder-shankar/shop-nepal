@@ -44,7 +44,7 @@ $product=new Product();
 
 
  	//sql rough
- 	$sql="INSERT INTO `product` (`product_id`, `product_title`, `product_price`, `product_detail`, `image`, `last_modified`, `admin_id`, `product_quantity`, `product_type`) VALUES (NULL, '$product_title', '$product_price', '$product_detail', '$image', '$date', '$admin_id','$product_quantity','laptop');";
+ 	$sql="INSERT INTO `product` (`product_id`, `product_title`, `product_price`, `product_detail`, `image`, `last_modified`, `admin_id`, `product_quantity`, `product_type`) VALUES (NULL, '$product_title', '$product_price', '$product_detail', '$image', '$date', '1','$product_quantity','laptop');";
 
 echo "after sql<br>";
 $res=$product->productQuery($sql);
@@ -220,3 +220,20 @@ else{
 
  ?>
 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+	
+	alert("product added go back");
+</script>
+
+
+</body>
+</html>

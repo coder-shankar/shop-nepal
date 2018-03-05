@@ -14,8 +14,8 @@
       <div class="item active" id="slide1" >
         <div class="carousel-caption">
           <h4>Dell Laptop</h4>
-          <h3>50% OFF</h3>
-          <button class="btn btn-primary">Buy Now</button>
+          <h3>5% OFF</h3>
+         
 
           <p class="lead">Dell inspiron 3421 is the best choice for new generation </p>
         </div>

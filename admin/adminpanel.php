@@ -238,19 +238,19 @@ end of modal
 
 					<h2>Product Detail:</h2>
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="product_title">Title</label>
-					<input type="text" name="product_title" id="product_title">
+					<input type="text" name="product_title" id="product_title" class="form-control">
 					</div>
 					
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="product_price">Price</label>
-					<input type="text" name="product_price" id="product_price">
+					<input type="text" name="product_price" id="product_price" class="form-control">
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="product_detail">Detail</label>
 					<textarea id="product_detail" name="product_detail">
 						
@@ -279,19 +279,19 @@ end of modal
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="product_image">Image</label>
-					<input type="file" name="product_image" id="product_image">
+					<input type="file" name="product_image" id="product_image" class="form-control">
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="product_quantity">No Of Product</label>
 					<input type="number" name="product_quantity" id="product_quantity">
 					</div>
 
 					
-					<div class="form-element">
+					<div class="form-group">
 					<label for="product_type">Select Product type</label>
 					
 					<select id="product_type">
@@ -309,37 +309,37 @@ end of modal
 
 						<h3>Laptop Detail:</h3>
 
-						<div class="form-element">
+						<div class="form-group">
 					<label for="model">Model</label>
-					<input type="text" name="model" id="model">
+					<input type="text" name="model" id="model" class="form-control">
 					</div>
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="cpu">Cpu</label>
-					<input type="text" name="cpu" id="cpu">
+					<input type="text" name="cpu" id="cpu" class="form-control">
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="harddisk">Harddisk</label>
-					<input type="text" name="harddisk" id="harddisk">
+					<input type="text" name="harddisk" id="harddisk" class="form-control">
 					</div>
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="os">Operatin System</label>
-					<input type="text" name="os" id="os">
+					<input type="text" name="os" id="os" class="form-control">
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="ram">Memory</label>
-					<input type="text" name="ram" id="ram">
+					<input type="text" name="ram" id="ram" class="form-control">
 					</div>
 
 
 
-					<div class="form-element submit">
-					<input type="submit" value="submit" name="laptopproductSubmit">
+					<div class="form-group submit">
+					<input type="submit" value="submit" name="laptopproductSubmit" class="btn btn-primary">
 				</div>
 
 
@@ -353,43 +353,43 @@ end of modal
 						<h3>Phone Detail</h3>
 
 
-						<div class="form-element">
+						<div class="form-group">
 					<label for="model">Model</label>
-					<input type="text" name="model" id="model">
+					<input type="text" name="model" id="model" class="form-control">
 
 
 
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="screen">Screen</label>
-					<input type="text" name="screen" id="screen">
+					<input type="text" name="screen" id="screen" class="form-control">
 					</div>
 
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="os">Operatin System</label>
-					<input type="text" name="os" id="os">
+					<input type="text" name="os" id="os" class="form-control">
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="sensor">Sensor </label>
-					<input type="text" name="sensor" id="sensor">
+					<input type="text" name="sensor" id="sensor" class="form-control">
 					</div>
 
 
-					<div class="form-element">
+					<div class="form-group">
 					<label for="camera">Camera</label>
-					<input type="text" name="camera" id="camera">
+					<input type="text" name="camera" id="camera" class="form-control">
 					</div>
 
 
 
-					<div class="form-element submit">
-					<input type="submit" value="submit" name="phoneproductSubmit">
+					<div class="form-group submit">
+					<input type="submit" value="submit" name="phoneproductSubmit" class="btn btn-primary">
 						</div>
 					</div> <!-- end of phone -->
 
@@ -468,7 +468,7 @@ $result=$conn->query($sql);
  ?>
 		</td>
 		<td>
-			<a class="btn btn-primary" >Update</a>
+			<a class="btn btn-primary" href="update.php" >Update</a>
 			
 			<br><br>
 			<a class="btn btn-danger" href="delete.php?deleteItem=1&id=<?php echo $products['product_id']?>">Delete</a>
@@ -493,69 +493,6 @@ $result=$conn->query($sql);
 
 
 
-
-
-
-	<!-- listing all the Products  -->
-
-	<?php 
-
-
-				//create connection 
-$conn=new mysqli("localhost","root","","shopnepaldb");
-//if connection error occured
-if($conn->connect_error)
-  die ("connection failed").$conn->connect-error;
-
-$sql="SELECT * FROM product;";
-$results=$conn->query($sql);
-
- ?>
-
-
-
-	<div class="product-list">
-
-		<h3 class="product-list"><span>Product List</span></h3>
-
-	<!-- displaying in table format -->
-	<table class="table">
-		
-		<thead>
-			<th>S.N</th>
-			<th>Product Name</th>
-			<th>Product Detalil</th>
-			<th>Stock</th>
-			<th>Last Modified</th>
-			
-		</thead> <!-- end of thead -->
-
-		<tbody>
-
-			<!-- query the product detail from database -->
-
-			<?php  $i=0; while ($products=mysqli_fetch_array($results,MYSQLI_ASSOC)) { ?>
-
-				<tr>
-
-				<td><?php echo $i; $i++; ?></td>
-				<td><?php echo $products['product_title']; ?></td>
-				<td><?php echo $products['product_detail'] ?></td>
-				<td><?php echo $products['last_modified']; ?></td>
-			</tr> <!-- end of row -->
-				
-
-
-	
-
-				<?php }  ?> <!-- end of while loop -->
-
-			
-		</tbody> <!-- end of table body -->
-
-	</table> <!-- end of table -->
-		
-	</div> <!-- end of product-list -->
 
 
 

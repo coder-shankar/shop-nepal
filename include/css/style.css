@@ -13,6 +13,29 @@ author shankar ghimire
 
 }
 
+/*
+-----------------------
+fonts
+-----------------------*/
+
+
+@font-face {
+font-family: 'OpenSans';
+src: 
+url('Fonts/OpenSans-Regular.ttf') format('truetype'),
+url('Fonts/OpenSans-ExtraBold.ttf') format('truetype'),
+url('Fonts/OpenSans-Italic.tff')format('truetype'),
+url('Fonts/OpenSans-Light.ttf') format('truetype'),
+url('Fonts/OpenSans-LightItallic.ttf') format('truetype'),
+url('Fonts/OpenSans-Bold.ttf') format('truetype'),
+url('Fonts/OpenSans-SemiboldBold.ttf') format('truetype'),
+url('Fonts/OpenSans-SemiboldBoldItalic.ttf') format('truetype');
+}
+
+body{
+		font-family: 'Open Sans', sans-serif;
+}
+
 
 
 /*

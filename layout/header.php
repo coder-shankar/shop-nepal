@@ -44,9 +44,9 @@ include('cartmodal.php');
 
       <!--end of navbar-nav-->
       
-         <form class="navbar-form  form-inline pull-right">
-        <input type="text" class="form-control" placeholder="Search products ..." id="searchInput" onkeyup="search()" placeholder="Search Product ">
-        <button class="btn-btn-default" type="submit"><i class="fa fa-search"></i></button>
+         <form class="navbar-form  form-inline pull-right" method="GET" action="search.php">
+        <input type="text" class="form-control" placeholder="Search products ..." id="searchInput" onkeyup="search()" placeholder="Search Product ..." name="search">
+        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
       </form>
       <!--end of nav form-->
 

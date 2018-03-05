@@ -122,10 +122,12 @@ header('Location:'.$redirectUrls);
 
 }
 
-else{
-	echo "<script>alert('Please sign in first');</script>";
+else{?>
+	<script>alert('Please sign in first');</script>
+	<?php
 	
 	header('Location: ' . $_SERVER['HTTP_REFERER']);
+	exit();
 
 }
 

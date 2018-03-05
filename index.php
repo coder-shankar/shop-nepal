@@ -104,8 +104,43 @@ $results=$product->fetchProduct();
 
 
         <p class="lead">price:<?php echo $products['product_price'];  ?> rs</p>
-        <div class="lead"><?php echo $products['product_detail']; ?></div>
+
+        <div class="lead"><?php
+
+
+// strip tags to avoid breaking any html
+$string = strip_tags($products['product_detail']);
+if (strlen($string) > 70) {
+
+    // truncate string
+    $stringCut = substr($string, 0, 70);
+    $endPoint = strrpos($stringCut, ' ');
+
+    //if the string doesn't contain any space then it will cut without word basis.
+    $string = $endPoint? substr($stringCut, 0, $endPoint):substr($stringCut, 0);
+    $string .= '... <a href="product_detail.php?id='.$products['product_id'].'&& type='.$products['product_type'].'">Read More</a>';
+}
+echo $string;
+
+
+
+
+
+
+         ?></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
        <a href="product_detail.php?id=<?php echo $products['product_id'];  ?>&& type=<?php echo $products['product_type']; ?> " class="btn btn-block btn-info" target="_blank" >View Detail</a>
+</div>
+<div class="col-6">
+
+       <a href="paypal/member/payment.php?price=<?php echo $products['product_price']; ?>" class="btn btn-block btn-danger" >Buy Now</a>
+     </div>
+</div>
+       </div>
+
       </div>
       <!--end of panel-->
     </div>

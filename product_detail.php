@@ -147,7 +147,7 @@ $product_type=$products['product_type'];
  
 </form>
 <div style="margin-top: 10px;">
-  <a href="http://localhost/shopnepal/paypal/member/payment.php" class="btn btn-primary btn-block">Buy</a>
+  <a href="http://localhost/shopnepal/paypal/member/payment.php?price=<?php echo $products['product_price']; ?>" class="btn btn-primary btn-block">Buy</a>
   </div>
   
 

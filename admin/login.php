@@ -39,6 +39,7 @@ if (is_null($row)) {
 	 	$_SESSION['admin']=$username;
 	 	$_SESSION['admin_id']=$row['admin_id'];
 	 	header('Location:adminpanel.php');
+	 	exit();
 	 
 	 }
 } 
